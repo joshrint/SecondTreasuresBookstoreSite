@@ -1,6 +1,7 @@
 extends layouts/layout
 block content
   .row.py-3
+    //Contact us page has an email response that will eventually post to an email server
     h1.pl-3.ca-header-font= title
     p= aboutUs
   .row
@@ -8,6 +9,8 @@ block content
       .card
         .card-body
           h3.card-title.pb-3 Contact Us
+
+          //Form will eventually post to the email server.
           form(name='contact', method='post')
             .form-group.row
               label.col-form-label.col-sm-2(for='email') Email:

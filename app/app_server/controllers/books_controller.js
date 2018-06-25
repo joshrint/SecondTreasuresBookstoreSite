@@ -32,6 +32,7 @@ const getSingleBook = function(req, res){
   })
 }
 
+//Export the getSingleBook to be accessed by the router
 module.exports = {
   getSingleBook
 }

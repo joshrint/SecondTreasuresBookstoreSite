@@ -1,4 +1,7 @@
 /*
+Author: Josh Rintoul
+Email: josh.rint@gmail.com
+GitHub: https://github.com/joshrint
 appRouter directs server to the pages selected by the user and handles all the POST, GET, DELETE requests the user wishes to do
 */
 var express = require('express');

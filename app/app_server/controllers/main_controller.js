@@ -6,6 +6,7 @@ Main Controller that handles the mainpage and the reading/review List
 - Add to list
 -Delete from list
 */
+//Get the book list from the books model
 var bookList = require('../models/books')
 //Render the main page
 var readingList = [ ]
@@ -67,6 +68,7 @@ const removeFromToReadList = function(req, res){
   res.redirect('/');
 }
 
+//Export the index, removeAlert, addToReadList, and removeFromToReadList to be accessed by the router
 module.exports = {
   index,
   removeAlert,

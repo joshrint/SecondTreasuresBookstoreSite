@@ -18,6 +18,7 @@ const postContact = function(req, res){
   })
 }
 
+//Export the contact and postContact functions to be accessed by the router
 module.exports = {
   contact,
   postContact

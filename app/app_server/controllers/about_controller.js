@@ -13,7 +13,7 @@ const about = function(req, res){
   });
 };
 
-
+//Export the about so it can be accessed by the router
 module.exports = {
   about
 }
