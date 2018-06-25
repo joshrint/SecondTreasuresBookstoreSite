@@ -1,0 +1,16 @@
+version: "3"
+services:
+  node:
+    container_name: SecondTreasure
+    build: ./node
+    image: secondtreasure
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+      - DEBUG=secondtreasure,express:*
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/home/node/app
+    command: "npm start"

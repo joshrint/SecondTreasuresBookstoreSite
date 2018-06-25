@@ -1,0 +1,23 @@
+<script>
+
+    var books;
+
+    function download() {
+        fetch('https://raw.githubusercontent.com/benoitvallon/100-best-books/master/books.json')
+        .then(res => res.json())
+        .then(out => books = out)
+        .then(window.alert('Downloaded'));
+    }
+
+    function showOutput() {
+        console.log('Check out the output: ', books);
+    }
+</script>
+
+<h1>Kevin's Javascript hacking</h1>
+<input type="button" onclick="download()">Download books</input><br>
+<input type="button" onclick="showOutput()">Show output</input>
+
+<script>
+console.log('Starting...');
+</script>
