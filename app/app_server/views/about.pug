@@ -1,0 +1,15 @@
+extends layouts/layout
+
+block content
+  .row.py-3
+    h1.pl-3.ca-header-font= title
+    p= aboutUs
+  .row
+    .col-12.col-md-8
+      .card
+        .card-body
+          h3.card-title.pb-3 Welcome to Second Treasures
+
+          p= about
+          //Picture from https://goodereader.com/blog/bookselling/us-bookstore-sales-fell-8-4-in-january-2018
+          img(src='/images/Bookstore.jpg' width='400')

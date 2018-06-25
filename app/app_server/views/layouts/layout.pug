@@ -1,0 +1,59 @@
+//Created by Josh Rintoul
+//Email: josh.rint@gmail.com
+//GitHub: https://github.com/joshrint
+// Layout Page for the Second Treasures Book Store
+doctype html
+html
+  head
+    //- shrink-to-fit=no is needed for the Safari browser
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+    title= title
+
+    //Import Bootstrap for building the design of the site
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', integrity='sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', integrity='sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T', crossorigin='anonymous')
+
+    //Import Font awesome stylesheet
+    link(href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin="anonymous")
+
+    //Import Material-Icons stylesheet
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet', type='text/css')
+
+    //Import the local stylesheet
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+
+    //Create the Nav-bar
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      a.navbar-brand(href='/')
+        //Assign the Treasure chest icon to be the home link
+        img(src='/images/chest.png', width='70', height='70', class="d-inline-block align-top" alt="")
+
+
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarText', aria-controls='navbarText', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarText.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+
+          //Populate the nav-bar with the links for Home, Events, about, and Contact us
+          li.nav-item.active
+            a.nav-link(href='/')
+              | Home
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='/events')
+              | Events
+          li.nav-item
+            a.nav-link(href='/about') About
+          li.nav-item
+            a.nav-link(href='/contact') Contact Us
+
+            //On the right it will show who is currently logged in and give the option to log out
+            //Currently there isn't the functionality to manage users but that will be implemented
+        span.navbar-text
+          | Logged in as John &nbsp;&nbsp;
+        button.btn.btn-primary logout
+
+    //Import the block content from the rest of the pages
+    block content

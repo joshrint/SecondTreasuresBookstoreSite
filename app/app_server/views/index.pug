@@ -1,0 +1,49 @@
+extends layouts/layout
+block content
+  //Extends the layout to display the nav-bar and implement stylesheets that were imported there
+  //Gets the title from the javascript and eventually a database
+  h1= title
+
+  .row
+    .col-12.col-md-8
+      //If there are any errors generated from the javascript it will show here
+      if errorMsg
+        .alert.alert-danger.alert-dismissible
+          a.close(href='/removeAlert', data-dismiss='alert', aria-label='close') ×
+          | #{errorMsg}
+
+      //Iterates over the books list from the javascript to show what is in stock
+      each book in books
+        .card.mt-2
+          .card-body
+
+            //Displays the book title, author, isbn, and price
+            h5.card-title #{book.title}
+            p
+              | Author: #{book.author} isbn: #{book.isbn}
+            p
+              | price: #{book.price}
+
+            //Gives the user the option to see more information or to add it to their review/reading list
+            div(align='right')
+              form(action='/', method='POST')
+                a.btn.btn-link(href=`/book/${book.isbn}`)
+                  i.material-icons zoom_in
+                  input#isbn(type='hidden', name='isbn', value=`${book.isbn}`)
+                button.btn.btn-link(type='submit')
+                  i.material-icons add_box
+
+    //Review List
+    .col-8.col-md-4
+      .card.mt-2
+        .card-body
+          h5.card-title Review List
+          ul.list-group.list-group-flush
+            //Same as above: Displays all the books in the review list being held in the javascript and displays the title and option to delete from list
+            each book in readingList
+              li.list-group-item
+                  //button to delete from the review list
+                  a.btn.btn-link(href=`/delete/${book.isbn}`)
+                    i.material-icons delete
+                  //Display the book title in the review list
+                  | #{book.title}

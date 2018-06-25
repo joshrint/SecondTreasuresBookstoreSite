@@ -1,0 +1,28 @@
+extends layouts/layout
+block content
+    .row.py-3
+
+    .row
+      .col-12.col-md-8
+        .card
+          .card-body
+            //For the book selected it will show the title, author, a brief description, and the price
+            h5.card-title.pb-3 #{book.title}
+            p.card-subtitle.mb-2.text-muted #{book.publisher}, #{book.published}
+            p
+            | Author: #{book.author}
+
+            p
+            | #{book.description}
+            br/
+            p
+            | Price: $#{book.price}
+
+            br/
+            br/
+
+            //Gives the option to add to the review list or to go back to the main page.
+            form(action='/', method='POST')
+                input#isbn(type='hidden', name='isbn', value=`${book.isbn}`)
+                button.card-link.btn.btn-dark.float-right(type='sumbit') Add to List
+            a.card-link.btn.btn-primary.float-right(href=`/`) Back
