@@ -1,5 +1,6 @@
 # SecondTreasuresBookstoreSite
 Built by: Josh Rintoul
+
 Version 1.0
 
 The Second Treasures Bookstore wanted a site that allowed an online list of their inventory and give the users a chance to create a reading list that can be used for the book club.
